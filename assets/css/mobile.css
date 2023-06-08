@@ -29,7 +29,7 @@
     background-color: transparent;
     width: 100%;
   }
-  body main .flip-card:hover .flip-card-inner {
+  body main .flip-card:active .flip-card-inner {
     transform: rotateY(180deg);
   }
   body main .flip-card .flip-card-inner {
@@ -44,6 +44,9 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     position: absolute;
+  }
+  body main .flip-card .flip-card-inner .cardFront:active .flip-card-inner {
+    transform: rotateY(180deg);
   }
   body main .flip-card .flip-card-inner .cardFront .img {
     display: flex;

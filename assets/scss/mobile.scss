@@ -31,7 +31,7 @@ body{
             background-color: transparent;
             width: 100%;
             // the height will be determinate by JS must be in pixel, if not problem with absolute position
-            &:hover{
+            &:active{
                 .flip-card-inner{
                     transform: rotateY(180deg);
                 }
@@ -52,6 +52,11 @@ body{
                     -webkit-backface-visibility: hidden;
                     backface-visibility: hidden;
                     position: absolute;
+                    &:active{ // test to see if it works on iphone
+                        .flip-card-inner{
+                            transform: rotateY(180deg);
+                        }
+                    } // end test
                     .img{
                         display: flex;
                         justify-content: center;
