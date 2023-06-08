@@ -1,0 +1,111 @@
+@media screen and (min-width : 451px) {
+    body{
+        background-color: lightblue;
+        header{
+            display: flex;
+            // flex-basis: 50%;
+            flex-wrap: wrap;
+            justify-content: center;
+            img{
+                width: 15%;
+                border-radius: 50%;
+                margin: 10px;
+                // float: left;
+            }
+            h1{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p{
+                margin: 10px;
+                width: 100%;
+                text-align: center;
+            }
+    
+            input{
+                margin-top: 20px;
+                width: 30%;
+            }
+        }
+        main{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px , 1fr));
+            .flip-card{
+                margin-top: 40px;
+                margin-bottom: 30px;
+                perspective: 1000px;
+                background-color: transparent;
+                width: 100%;
+                // the height will be determinate by JS must be in pixel, if not problem with absolute position
+                &:hover{
+                    .flip-card-inner{
+                        transform: rotateY(180deg);
+                    }
+                }
+                &:active{
+                    .flip-card-inner{
+                        transform: rotateY(180deg);
+                    }
+                }
+                .flip-card-inner{
+                    transition: transform 0.6s;
+                    transform-style: preserve-3d;
+                    position: relative;
+                    width: 100%;
+                    .cardFront{
+                        margin: 5px;
+                        border: 1px solid gray;
+                        -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
+                        position: absolute;
+                        .img{
+                            display: flex;
+                            justify-content: center;
+                            img{
+                                width: 95%;
+                                padding: 2.5%;
+                                background-color: aqua;
+                            }
+                        }
+                        .content{
+                            padding: 10px;
+                            background-color: yellow;
+                            span{
+                                &:nth-child(2){ // Be aware that even if we target "span" the argument of nth-child is the n-child of the father of span
+                                    background-color: red;
+                                    margin: 10px;
+                                    margin-top: 20px;
+                                }
+                                &:nth-child(3){
+                                    background-color: yellow;
+                                    margin: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .cardBack{
+                        margin: 5px;
+                        border: 1px solid gray;
+                        -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
+                        transform: rotateY(180deg);
+                        position: absolute;
+                        .img{
+                            display: flex;
+                            justify-content: center;
+                            img{
+                                width: 95%;
+                                padding: 2.5%;
+                                background-color: aqua;
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
