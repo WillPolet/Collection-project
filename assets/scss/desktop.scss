@@ -39,16 +39,7 @@
                 background-color: transparent;
                 width: 100%;
                 // the height will be determinate by JS must be in pixel, if not problem with absolute position
-                &:hover{
-                    .flip-card-inner{
-                        transform: rotateY(180deg);
-                    }
-                }
-                &:active{
-                    .flip-card-inner{
-                        transform: rotateY(180deg);
-                    }
-                }
+                // flip is now handled by js
                 .flip-card-inner{
                     transition: transform 0.6s;
                     transform-style: preserve-3d;

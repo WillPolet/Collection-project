@@ -36,19 +36,30 @@ for (let j = 0 ; j < collection.length ; j ++){
     document.getElementsByTagName("main")[0].insertAdjacentHTML("beforeend", elementCard)
 }
 
-window.onload = function(){
+window.onload = (event) => {
   for (let m = 0 ; m < collection.length ; m++){
-    let height = document.getElementById(stringify(collection[m].name)).clientHeight
-    console.log(height)
+    let element = document.getElementById(stringify(collection[m].name))
+    let elementBack = document.getElementById(`${stringify(collection[m].name)}Back`)
+    let height = element.clientHeight
+    // console.log(height)
     document.getElementById(`heightCard${stringify(collection[m].name)}`).style.height = height+"px"
-    document.getElementById(`${stringify(collection[m].name)}Back`).style.height = height + "px"
-    document.getElementById(`${stringify(collection[m].name)}Back`).style.backgroundImage = `url("${collection[m].backImage}")`
-    document.getElementById(`${stringify(collection[m].name)}Back`).style.backgroundSize = "100% 100%"
-    document.getElementById(`${stringify(collection[m].name)}Back`).style.backgroundRepeat = "no-repeat"
-    
+    elementBack.style.height = height + "px"
+    elementBack.style.backgroundImage = `url("${collection[m].backImage}")`
+    elementBack.style.backgroundSize = "100% 100%"
+    elementBack.style.backgroundRepeat = "no-repeat"
+    /* PART FOR FLIP CAN INCREASE BY CHANGING THE FLIP SENS */
+    element.addEventListener("click", function(){
+      console.log(stringify(collection[m].name))
+      element.parentNode.style.transform = "rotateY(180deg)"
+      // setTimeout(function(){
+      //   element.parentNode.style.transform = "rotateY(0deg)"
+      // },2000)
+    })
+    elementBack.addEventListener("click", function (){
+      elementBack.parentNode.style.transform = "rotateY(0deg)"
+    } )
   }
 }
-
 
 
 // -------------------------------------------------------------------------
