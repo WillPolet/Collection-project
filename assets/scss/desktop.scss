@@ -69,12 +69,12 @@
                             background-color: rgba(211, 211, 211, 0.641);
                             span{
                                 &:nth-child(2){ // Be aware that even if we target "span" the argument of nth-child is the n-child of the father of span
-                                    background-color: red;
+                                    background-color: rgb(0, 255, 247);
                                     margin: 10px;
                                     margin-top: 20px;
                                 }
                                 &:nth-child(1){
-                                    background-color: rgb(0, 255, 195);
+                                    background-color: rgb(0, 225, 255);
                                     margin: 10px;
                                 }
                             }
@@ -103,4 +103,12 @@
         }
     }
 
+}
+
+@media screen and (min-width : 1200px) {
+    body{
+        main{
+            height: 2100px;
+        }
+    }
 }

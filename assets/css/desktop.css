@@ -67,12 +67,12 @@
     background-color: rgba(211, 211, 211, 0.641);
   }
   body main .flip-card .flip-card-inner .cardFront .content span:nth-child(2) {
-    background-color: red;
+    background-color: rgb(0, 255, 247);
     margin: 10px;
     margin-top: 20px;
   }
   body main .flip-card .flip-card-inner .cardFront .content span:nth-child(1) {
-    background-color: rgb(0, 255, 195);
+    background-color: rgb(0, 225, 255);
     margin: 10px;
   }
   body main .flip-card .flip-card-inner .cardBack {
@@ -92,6 +92,11 @@
     padding: 2.5%;
     background-color: lightskyblue;
     visibility: hidden;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body main {
+    height: 2100px;
   }
 }
 

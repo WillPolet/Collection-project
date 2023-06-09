@@ -1,6 +1,6 @@
 @media screen and (max-width : 450px) {
 body{
-    background-color: lightcoral;
+    background-color: rgb(108, 114, 220);
     header{
         display: flex;
         flex-direction: row-reverse;
@@ -58,20 +58,20 @@ body{
                         img{
                             width: 95%;
                             padding: 2.5%;
-                            background-color: aqua;
+                            background-color: rgba(3, 16, 16, 0.427);
                         }
                     }
                     .content{
                         padding: 10px;
-                        background-color: yellow;
+                        background-color: rgb(56, 79, 214);
                         span{
                             &:nth-child(2){ // Be aware that even if we target "span" the argument of nth-child is the n-child of the father of span
-                                background-color: red;
+                                background-color: rgb(199, 202, 252);
                                 margin: 10px;
                                 margin-top: 20px;
                             }
-                            &:nth-child(3){
-                                background-color: yellow;
+                            &:nth-child(1){
+                                background-color: rgb(199, 202, 252);
                                 margin: 10px;
                             }
                         }
